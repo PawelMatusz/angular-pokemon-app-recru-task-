@@ -1,0 +1,8 @@
+<div class="min-h-[220px] grid grid-cols-3 gap-6 border-2 border-solid border-slate-300 rounded py-6 px-4 sticky top-20 ">
+    <ng-container *ngFor="let item of sprites$ | async | keyvalue | slice:0:-2">
+        <div *ngIf="item.value !== null"
+            class=" flex place-content-center ">
+            <img [src]="item.value" loading="lazy" />
+        </div>
+    </ng-container>
+</div>
