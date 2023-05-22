@@ -1,15 +1,18 @@
+<!--formatowanie eleganckie ma być-->
 <div class="grid gap-4 grid-cols-3">
-    <a href="#" 
-        [routerLink]="[item.name]" 
-        routerLinkActive="active" 
-        *ngFor="let item of pokemons; let i = index"
-        (click)="selectPokemon(i)"
-        [class.bg-gray-100]="selectItem === i"
-         class="flex flex-col justify-center text-center gap-4 items-center px-4 py-2 rounded hover:bg-gray-100">
-        <img [src]="item.imageUrl" 
-         alt="{{item.name}} image"
+  <a href="#"
+     [routerLink]="[item.name]"
+     routerLinkActive="active"
+     *ngFor="let item of pokemons; let i = index"
+     (click)="selectPokemon(i)"
+     [class.bg-gray-100]="selectItem === i"
+     class="flex flex-col justify-center text-center gap-4 items-center px-4 py-2 rounded hover:bg-gray-100">
+<!--      atrybuty powinny być oznaczane jako attr.-->
+      <!--         inaczej attrybuty lepiej przypisaywać [attr.atrybut]="zmienna"-->
+    <img [attr.src]="item.imageUrl"
+         [attr.alt]="item.name"
          loading="lazy">
-        <p>{{ item.name }}</p> 
-    </a>
+    <p>{{ item.name }}</p>
+  </a>
 </div>
 <app-load-more (loadMore)="loadMore()" [buttonContent]="'Click here to load 10 more...'"></app-load-more>

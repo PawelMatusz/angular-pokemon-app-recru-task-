@@ -1,3 +1,4 @@
+// to mógłby być interface
 export type LoadSpritesResponse = {
     readonly sprites: {
       "back_default": string | null;
